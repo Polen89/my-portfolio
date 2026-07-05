@@ -32,9 +32,23 @@ export default function HomePage() {
 
   return (
       <main className="min-h-screen bg-slate-100 dark:bg-zinc-950 text-slate-900 dark:text-zinc-50 transition-colors duration-300">
+        {/* NAV */}
+        <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-slate-200 dark:border-zinc-800">
+        <span className="text-xl font-bold tracking-tight text-teal-600 dark:text-teal-400">
+          Chris Polen
+        </span>
+          <div className="flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-6">
+              <a href="#projects" className="text-sm font-medium text-slate-600 dark:text-zinc-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Work</a>
+              <a href="#capabilities" className="text-sm font-medium text-slate-600 dark:text-zinc-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Capabilities</a>
+              <a href="#contact" className="text-sm font-medium text-slate-600 dark:text-zinc-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Contact</a>
+            </div>
+            <ThemeToggle />
+          </div>
+        </nav>
 
         {/* HERO */}
-        <section className="bg-slate-200 dark:bg-zinc-900">
+        <section className="bg-slate-200 dark:bg-zinc-950 pt-16">
           <div className="mx-auto max-w-4xl px-6 py-10 md:py-12">
             <div className="flex items-center justify-between">
               <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/40 bg-white dark:bg-zinc-900/80 px-4 py-2 shadow-sm">
@@ -46,7 +60,6 @@ export default function HomePage() {
                 Data workflows · Dashboards
               </span>
               </div>
-              <ThemeToggle />
             </div>
 
             <h1 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">
@@ -81,7 +94,7 @@ export default function HomePage() {
         </section>
 
         {/* SELECTED WORK */}
-        <section id="projects" className="bg-slate-100 dark:bg-zinc-900">
+        <section id="projects" className="bg-slate-100 dark:bg-zinc-900 border-t-2 border-teal-500">
           <div className="mx-auto max-w-4xl px-6 py-9 md:py-10">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-700 dark:text-zinc-500">
               Selected Work
@@ -145,7 +158,7 @@ export default function HomePage() {
         </section>
 
         {/* CAPABILITIES */}
-        <section className="bg-slate-200 dark:bg-zinc-950">
+        <section id="capabilities" className="bg-slate-200 dark:bg-zinc-950">
           <div className="mx-auto max-w-4xl px-6 py-9 md:py-10">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-700 dark:text-zinc-500">
               Capabilities
