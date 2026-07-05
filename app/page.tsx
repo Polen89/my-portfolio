@@ -269,7 +269,7 @@ export default function HomePage() {
               <a
                   href="mailto:polen.chris89@gmail.com"
                   aria-label="Email Chris Polen about frontend opportunities"
-                  className="rounded-md bg-teal-600 dark:bg-teal-500 px-5 py-3 text-sm font-medium text-white dark:text-zinc-950 shadow-md transition hover:bg-teal-500 dark:hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                  className="rounded-md bg-teal-600 dark:bg-teal-500 px-5 py-3 text-sm font-medium text-white dark:text-white shadow-md transition hover:bg-teal-500 dark:hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
               >
               Email
             </a>
