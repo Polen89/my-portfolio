@@ -1,65 +1,306 @@
-import Image from "next/image";
+import { ThemeToggle } from "@/app/components/theme-toggle";
 
-export default function Home() {
+export default function HomePage() {
+  const projects = [
+    {
+      title: "Personal Portfolio Website",
+      description:
+          "Next.js + Tailwind site that presents my frontend direction, projects, and technical background.",
+      stack: ["Next.js", "Tailwind CSS", "TypeScript"],
+    },
+    {
+      title: "Electric Vehicle Dashboard",
+      description:
+          "Interactive EV dashboard built with Flask, HTML, CSS, and JavaScript to explore registration data with charts, filters, and exports.",
+      stack: ["Flask", "HTML", "CSS", "JavaScript"],
+      github: "https://github.com/Polen89/EV-Dashboard",
+      live: "https://ev-dashboard-vkrs.onrender.com/",
+    },
+    {
+      title: "Workflow Tooling",
+      description:
+          "Practical tools and geospatial solutions built from real-world experience in maritime data, GIS workflows, and modern web development.",
+      stack: ["JavaScript", "APIs", "Problem Solving"],
+    },
+  ];
+
+  const skills = [
+    "Next.js", "Tailwind CSS", "TypeScript", "HTML5", "CSS3",
+    "JavaScript", "Responsive Design", "UI / UX Design", "Git",
+    "APIs", "Python", "SQL",
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+      <main className="min-h-screen bg-slate-100 dark:bg-zinc-950 text-slate-900 dark:text-zinc-50 transition-colors duration-300">
+
+        {/* HERO */}
+        <section className="bg-slate-200 dark:bg-zinc-900">
+          <div className="mx-auto max-w-4xl px-6 py-10 md:py-12">
+            <div className="flex items-center justify-between">
+              <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/40 bg-white dark:bg-zinc-900/80 px-4 py-2 shadow-sm">
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-700 dark:text-teal-300">
+                Frontend Developer
+              </span>
+                <span className="h-1 w-1 rounded-full bg-teal-500 dark:bg-teal-400" />
+                <span className="text-xs font-medium text-slate-600 dark:text-zinc-300">
+                Data workflows · Dashboards
+              </span>
+              </div>
+              <ThemeToggle />
+            </div>
+
+            <h1 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">
+              Chris Polen
+            </h1>
+
+            <p className="mt-4 text-base leading-7 text-slate-700 dark:text-zinc-300">
+              Frontend-focused developer with a background in GIS, data workflows, and building
+              practical web-based tools and dashboards.
+            </p>
+
+            <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-zinc-400">
+              I care about interfaces that feel intentional, readable, and actually helpful for the
+              people using them.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-4">
+              <a
+                  href="#projects"
+                  className="rounded-md bg-teal-600 dark:bg-teal-500 px-7 py-3 text-sm font-medium text-white dark:text-white shadow-md transition hover:bg-teal-500 dark:hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+              >
+                View Selected Work
+              </a>
+              <a
+                  href="#contact"
+                  className="rounded-md border border-slate-400 dark:border-zinc-700 bg-white dark:bg-zinc-900/80 px-7 py-3 text-sm font-medium text-slate-900 dark:text-zinc-50 transition hover:bg-slate-100 dark:hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+              >
+                Contact Me
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* SELECTED WORK */}
+        <section id="projects" className="bg-slate-100 dark:bg-zinc-900">
+          <div className="mx-auto max-w-4xl px-6 py-9 md:py-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-700 dark:text-zinc-500">
+              Selected Work
+            </p>
+            <h2 className="mt-2 text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">
+              Projects that reflect the kind of frontend work I like to build.
+            </h2>
+            <p className="mt-3 text-base leading-7 text-slate-600 dark:text-zinc-300">
+              I&apos;m focused on building responsive interfaces, useful tools, and web experiences
+              that feel clear, intentional, and easy to use.
+            </p>
+
+            <div className="mt-6 space-y-4">
+              {projects.map((project) => (
+                  <article
+                      key={project.title}
+                      className="border-b border-slate-300 dark:border-zinc-800 pb-4 last:border-b-0"
+                  >
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-zinc-50">
+                      {project.title}
+                    </h3>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {project.stack.map((item) => (
+                          <span
+                              key={item}
+                              className="rounded-full border border-teal-300 dark:border-zinc-700 bg-teal-100 dark:bg-zinc-900 px-3 py-1 text-xs text-teal-800 dark:text-zinc-900"
+                          >
+                      {item}
+                    </span>
+                      ))}
+                    </div>
+                    <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-zinc-300">
+                      {project.description}
+                    </p>
+                    <div className="mt-2 flex flex-wrap gap-3 text-sm">
+                      {project.live && (
+                          <a
+                              href={project.live}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="rounded-md bg-teal-600 dark:bg-teal-500 px-7 py-3 text-sm font-medium text-white dark:text-white shadow-md transition hover:bg-teal-500 dark:hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                          >
+                            Live Demo
+                          </a>
+                      )}
+                      {project.github && (
+                          <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="rounded-md border border-slate-400 dark:border-zinc-700 bg-white dark:bg-zinc-900/80 px-7 py-3 text-sm font-medium text-slate-900 dark:text-zinc-50 transition hover:bg-slate-100 dark:hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                          >
+                            View source on GitHub
+                          </a>
+                      )}
+                    </div>
+                  </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CAPABILITIES */}
+        <section className="bg-slate-200 dark:bg-zinc-950">
+          <div className="mx-auto max-w-4xl px-6 py-9 md:py-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-700 dark:text-zinc-500">
+              Capabilities
+            </p>
+            <h2 className="mt-2 text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">
+              I build clear, usable interfaces backed by technical depth.
+            </h2>
+            <p className="mt-3 text-base leading-7 text-slate-600 dark:text-zinc-300">
+              I&apos;m moving deeper into frontend development and UI-focused work, with a background
+              in technical workflows, structured data, and practical tool building.
+            </p>
+            <div className="mt-6 grid gap-6 md:grid-cols-3">
+              <article className="rounded-2xl border border-slate-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/80 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-700 dark:text-zinc-500">
+                  Frontend
+                </p>
+                <h3 className="mt-2 text-lg font-semibold text-slate-900 dark:text-zinc-50">
+                  Responsive, modern web interfaces
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-zinc-300">
+                  Building websites and app interfaces with a focus on clean layout, readable
+                  structure, and straightforward user flows.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {skills.map((skill) => (
+                      <span
+                          key={skill}
+                          className="rounded-full border  border-teal-300 dark:border-zinc-700 bg-teal-100 dark:bg-teal-100 px-3 py-1.5 text-xs text-teal-800 dark:text-zinc-900"
+                      >
+                    {skill}
+                  </span>
+                  ))}
+                </div>
+              </article>
+
+              <article className="rounded-2xl border border-slate-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/80 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-700 dark:text-zinc-500">
+                  UI / UX
+                </p>
+                <h3 className="mt-2 text-lg font-semibold text-slate-900 dark:text-zinc-50">
+                  Interfaces designed to feel clear and useful
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-zinc-300">
+                  I care about spacing, hierarchy, usability, and building pages that are easy to
+                  scan, navigate, and understand.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {["Responsive Design", "UI / UX Design", "Accessibility"].map((item) => (
+                      <span
+                          key={item}
+                          className="rounded-full border border-teal-300 dark:border-zinc-700 bg-teal-100 dark:bg-teal-100 px-3 py-1.5 text-xs text-teal-800 dark:text-zinc-900"
+                      >
+                    {item}
+                  </span>
+                  ))}
+                </div>
+              </article>
+
+              <article className="rounded-2xl border border-slate-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/80 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-700 dark:text-zinc-500">
+                  Foundation
+                </p>
+                <h3 className="mt-2 text-lg font-semibold text-slate-900 dark:text-zinc-50">
+                  Strong technical background behind the interface
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-zinc-300">
+                  My experience with data workflows, APIs, scripting, and structured systems helps
+                  me build practical web-based tools with real utility.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {["JavaScript", "Python", "APIs", "SQL"].map((item) => (
+                      <span
+                          key={item}
+                          className="rounded-full border border-teal-300 dark:border-zinc-700 bg-teal-100 dark:bg-teal-100 px-3 py-1.5 text-xs text-teal-800 dark:text-zinc-900"
+                      >
+                    {item}
+                  </span>
+                  ))}
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        {/* BACKGROUND */}
+        <section className="bg-slate-100 dark:bg-zinc-900">
+          <div className="mx-auto max-w-4xl px-6 py-8 md:py-9">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-700 dark:text-zinc-500">
+              Background
+            </p>
+            <h2 className="mt-2 text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">
+              Bringing technical depth into frontend work.
+            </h2>
+            <p className="mt-3 text-base leading-7 text-slate-600 dark:text-zinc-300">
+              I&apos;ve worked with GIS, data workflows, scripting, dashboards, and internal tools.
+              That experience gave me a strong foundation in problem-solving and structured thinking,
+              which I&apos;m now applying directly to frontend development and interface-focused work.
+            </p>
+          </div>
+        </section>
+
+        {/* CONTACT */}
+        <section id="contact" className="border-t-2 border-teal-500 bg-slate-200 dark:bg-zinc-950">
+          <div className="mx-auto max-w-4xl px-6 py-8 md:py-9">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-700 dark:text-zinc-500">
+              Contact
+            </p>
+            <h2 className="mt-2 text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">
+              Let&apos;s connect about frontend work.
+            </h2>
+            <p className="mt-3 text-base leading-7 text-slate-600 dark:text-zinc-300">
+              I&apos;m interested in frontend-focused roles and projects where clear interfaces, data,
+              and practical tools matter. Feel free to reach out about opportunities or collaboration.
+            </p>
+
+            <p className="mt-4 text-xs font-medium text-slate-500 dark:text-zinc-500">
+              Preferred contact:
+            </p>
+
+            <div className="mt-3 flex flex-wrap gap-4">
+              <a
+                  href="mailto:polen.chris89@gmail.com"
+                  aria-label="Email Chris Polen about frontend opportunities"
+                  className="rounded-md bg-teal-600 dark:bg-teal-500 px-5 py-3 text-sm font-medium text-white dark:text-zinc-950 shadow-md transition hover:bg-teal-500 dark:hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+              >
+              Email
+            </a>
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+              href="https://github.com/Polen89"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                  rounded-md border border-slate-400 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-5 py-3 text-sm font-medium text-slate-900 dark:text-zinc-50 transition hover:border-teal-500 hover:bg-slate-100 dark:hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+              >
+                GitHub
+              </a>
+              <a
+                  href="https://www.linkedin.com/in/christopher-polen/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-md border border-slate-400 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-5 py-3 text-sm font-medium text-slate-900 dark:text-zinc-50 transition hover:border-teal-500 hover:bg-slate-100 dark:hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+              >
+                LinkedIn
+              </a>
+              <a
+                  href="/frontend-resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-md border border-slate-400 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-5 py-3 text-sm font-medium text-slate-900 dark:text-zinc-50 transition hover:border-teal-500 hover:bg-slate-100 dark:hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+              >
+                Resume
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
-    </div>
   );
 }
