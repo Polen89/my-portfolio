@@ -70,8 +70,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            <h1 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">
-              Chris Polen
+            <h1 className="text-4xl pt-6 md:text-5xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">
+              Building interfaces that are clear, useful, and intentional.
             </h1>
 
             <p className="mt-4 text-base leading-7 text-slate-700 dark:text-zinc-300">
@@ -80,8 +80,7 @@ export default function HomePage() {
             </p>
 
             <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-zinc-400">
-              I care about interfaces that feel intentional, readable, and actually helpful for the
-              people using them.
+              I care about making things that actually work well for the people using them.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-4">
