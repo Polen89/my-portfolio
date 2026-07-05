@@ -6,7 +6,7 @@ export default function HomePage() {
       title: "Personal Portfolio Website",
       description:
           "Next.js + Tailwind site that presents my frontend direction, projects, and technical background.",
-      stack: ["Next.js", "Tailwind CSS", "TypeScript"],
+      stack: ["Next.js", "Tailwind CSS", "HTML", "TypeScript"],
     },
     {
       title: "Electric Vehicle Dashboard",
