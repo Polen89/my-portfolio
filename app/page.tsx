@@ -17,10 +17,18 @@ export default function HomePage() {
       live: "https://ev-dashboard-vkrs.onrender.com/",
     },
     {
-      title: "Workflow Tooling",
+      title: "Python File Organizer",
       description:
-          "Practical tools and geospatial solutions built from real-world experience in maritime data, GIS workflows, and modern web development.",
-      stack: ["JavaScript", "APIs", "Problem Solving"],
+          "Python utility for organizing files by date and normalizing filenames, with safe collision handling and support for multiple file types.",
+      stack: ["Python", "File I/O", "CLI"],
+      github: "https://github.com/Polen89/python-file-organizer",
+    },
+    {
+      title: "Personal Spending Analysis",
+      description:
+          "Python-based analysis of personal expense data using pandas and matplotlib to identify spending patterns and key cost drivers.",
+      stack: ["Python", "pandas", "matplotlib", "Data Analysis"],
+      github: "https://github.com/Polen89/personal-spending-analysis",
     },
   ];
 
