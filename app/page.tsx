@@ -92,7 +92,7 @@ export default function HomePage() {
               </a>
               <a
                   href="#contact"
-                  className="rounded-md border border-slate-400 dark:border-zinc-700 bg-white dark:bg-zinc-900/80 px-7 py-3 text-sm font-medium text-slate-900 dark:text-zinc-50 transition hover:bg-slate-100 dark:hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                  className="rounded-md border border-slate-400 dark:border-teal-500 bg-white dark:bg-zinc-900/80 px-7 py-3 text-sm font-medium text-slate-900 dark:text-zinc-50 transition hover:bg-slate-100 dark:hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
               >
                 Contact Me
               </a>
@@ -152,7 +152,7 @@ export default function HomePage() {
                               href={project.github}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="rounded-md border border-slate-400 dark:border-zinc-700 bg-white dark:bg-zinc-900/80 px-7 py-3 text-sm font-medium text-slate-900 dark:text-zinc-50 transition hover:bg-slate-100 dark:hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                              className="rounded-md border border-slate-400 dark:border-teal-500 bg-white dark:bg-zinc-900/80 px-7 py-3 text-sm font-medium text-slate-900 dark:text-zinc-50 transition hover:bg-slate-100 dark:hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
                           >
                             View source on GitHub
                           </a>
